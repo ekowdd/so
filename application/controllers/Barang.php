@@ -17,14 +17,16 @@ class Barang extends CI_Controller
 
     public function index($page = NULL, $offset = '', $key = NULL)
     {
-        $data['query'] = $this->model_upldbrg->get_allimage(); //query dari model
 
-        $this->load->view('home', $data); //tampilan awal ketika controller upload di akses
+        $store = $this->input->get('store_name');
+        // $data['query'] = $this->model_upldbrg->get_allimage($store); //query dari model
+        echo json_encode(array('msg'=>$this->model_upldbrg->get_allimage($store)));
+        // $this->load->view('viewalldata',$data); //tampilan awal ketika controller upload di akses
     }
 
     public function add()
     {
-        //view yang tampil jika fungsi add diakses pada url
+        //view yang tampil view fungsi add diakses pada url
         $this->load->view('fupload');
 
     }
@@ -55,7 +57,7 @@ class Barang extends CI_Controller
                     'quantity' => $this->input->post('quantity'),
                     'value' => $this->input->post('value'),
                     'total' => $this->input->post('total'),
-                    'keterangan' => $this->input->post('keterangan')
+                    'image'=>base_url().'assets/hasil_resize/'.$gbr['file_name']
 
                 );
 
@@ -65,8 +67,8 @@ class Barang extends CI_Controller
                 $config2['source_image'] = $this->upload->upload_path . $this->upload->file_name;
                 $config2['new_image'] = './assets/hasil_resize/'; // folder tempat menyimpan hasil resize
                 $config2['maintain_ratio'] = TRUE;
-                $config2['width'] = 100; //lebar setelah resize menjadi 100 px
-                $config2['height'] = 100; //lebar setelah resize menjadi 100 px
+                $config2['width'] = 800; //lebar setelah resize menjadi 100 px
+                $config2['height'] = 800; //lebar setelah resize menjadi 100 px
                 $this->load->library('image_lib', $config2);
 
                 //pesan yang muncul jika resize error dimasukkan pada session flashdata
@@ -90,4 +92,11 @@ class Barang extends CI_Controller
 
     }
 
+    public function get_product_byBarcode(){
+        $barcode = $this->input->get('barcode');
+
+        echo json_encode(array('msg'=>$this->model_upldbrg->get_barang_join($barcode)));
+    }
+
 }
+// android:indicatorEnd="?android:attr/expandableListPreferredChildIndicatorRight"

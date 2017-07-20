@@ -22,6 +22,6 @@ class model_user extends CI_Model
     public function get_all_data_by_nik($nik)
     {
         return $this->db->where('nik', $nik)
-            ->get('user');
+            ->get('user')->result();
     }
 }

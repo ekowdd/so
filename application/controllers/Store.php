@@ -34,4 +34,8 @@ class Store extends CI_Controller
     {
         echo rand(100000000, 999999999);
     }
+
+    public function getStorName(){
+        echo json_encode(array('msg'=>$this->MS->get_all_data_json()));
+    }
 }

@@ -9,7 +9,7 @@ class Transaksi extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('model_transaksi', 'MT');
+        $this->load->model('Model_transaksi', 'MT');
     }
 
     public function save_trensaksi()
@@ -44,6 +44,12 @@ class Transaksi extends CI_Controller
     public function get_data_all_json()
     {
         echo json_encode(array('status' => true, 'msg' => $this->MT->get_all_data()));
+    }
+
+
+    public function get_transaksi_by_store(){
+        $store = $this->input->get('store');
+
     }
 
 }

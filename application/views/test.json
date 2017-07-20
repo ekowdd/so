@@ -1,0 +1,29 @@
+{
+	"msg":
+			[
+				{
+					"product_code":"0101010001",
+					"product_name":"SHELL HLX HX3 SAE 20W-50 API SJ/CF 1LT",
+					"barcode":"0101010001",
+					"store_name":"CK BENDUNGAN HILIR 1",
+					"quantity":"200",
+					"value":"16000",
+					"total":"3200000",
+					"nama_file":"file_1498255884.jpeg",
+					"type":"image/jpeg",
+					"image":"http://192.168.1.100/so_oms/assets/hasil_resize/file_1498255884.jpeg"
+				},
+				{
+					"product_code":"0202010022",
+					"product_name":"GUDANG GARAM FILTER 12'S",
+					"barcode":"0202010022",
+					"store_name":"CK BENDUNGAN HILIR 1",
+					"quantity":"200",
+					"value":"16000",
+					"total":"3200000",
+					"nama_file":"file_1498257849.jpg",
+					"type":"image/jpeg",
+					"image":"http://192.168.1.100/so_oms/assets/hasil_resize/file_1498257849.jpg"
+				}
+			]
+}
